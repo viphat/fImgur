@@ -2,7 +2,9 @@
 <html>
 <head> <!-- No title and meta tags are necessary for the extension -->
 <meta charset="UTF-8">
+<title>fImgUr Upload - Chrome Extensions</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 <script src="jquery-2.1.4.min.js"></script> <!-- Including jQuery -->
 <script src="paste_image_reader.js"></script>
 <script src="main.js"></script> <!-- Our script file -->
@@ -10,18 +12,27 @@
 <!-- My ClientId: 1c2773cd677b6df -->
 <!-- My ClientSecret: 7a9b1e97827b9da0c124800644211a5ed1826aac -->
 <body>
+<style>
 
-<h1>Copy & Paste ảnh để Upload lên Imgur</h1>
+</style>
+
+<h1>Upload to Imgur</h1>
 
 <div id='placeholder'>
-<div id='inner'>
-Copy Image & Paste Here to Upload to Imgur
+  <div id='inner'>
+    Copy Image From Any Web Page & Paste Here to Upload to Imgur<br/> Or Drag & Drop from Your Computer
+  </div>
 </div>
+<div>
+  <!-- <span>Or Add Files from Computer (Support Drag&Drop)...</span> -->
+<!--   <div id="holder">
+  </div> -->
+  <p id="upload"><label>You can still upload via this input field:<br><input type="file"></label></p>
 </div>
 <label style='margin-left: 5px;'>Result: </label>
+<span id='loading' class="hidden"><i class='fa fa-spinner fa-pulse'></i></span>
 <input id='link_holder' type='text' value='http://imgur.com'>
 <br/>
-<button id='copy-btn' data-clipboard-text="Copied ButtoText">Copy</button>
-
+<button id='copy-btn'>Copy</button>
 </body>
 </html>

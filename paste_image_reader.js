@@ -61,7 +61,10 @@ $("html").pasteImageReader(function(results) {
   var dataURL, filename;
   filename = results.filename, dataURL = results.dataURL;
   dataURL = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-  $('#link_holder').val('Uploading...');
+
+  $('#loading').removeClass('hidden');
+  $('#link_holder').addClass('hidden');
+
   $.ajax({
     url: 'https://api.imgur.com/3/image',
     headers: {
@@ -73,9 +76,11 @@ $("html").pasteImageReader(function(results) {
     },
     success: function(result) {
       $('#link_holder').val(result.data.link);
+      $('#link_holder').removeClass('hidden');
+      $('#loading').addClass('hidden');
       localStorage.imgur_link = result.data.link;
       var img = document.createElement('img');
-      img.className = 'thumb'
+      img.className = 'thumb';
       img.src= result.data.link;
       $('#inner').html(img);
     }

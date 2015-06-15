@@ -1,18 +1,18 @@
 {
   "manifest_version": 2,
   "name": "Fa(s)t Upload To Imgur Extension",
-  "version": "0.5",
+  "version": "0.7",
   "description": "Upload ảnh lên Imgur nhanh gọn bằng chức năng Copy & Paste của HTML5",
 
   // "default_locale": "en",
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "index.html",
+    "default_popup": "popup.html",
     "default_title": "Upload To Imgur"
   },
 
   "permissions":["clipboardWrite"],
-  "content_security_policy": "script-src 'self' https://query.yahooapis.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' ; object-src 'self'"
 
 }
