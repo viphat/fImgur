@@ -73,7 +73,10 @@ $(document).ready(function(){
       this.className = '';
       e.preventDefault();
       readfiles(e.dataTransfer.files);
-    }
+    };
+    fileupload.querySelector('input').onchange = function () {
+      readfiles(this.files);
+    };
   } else {
     fileupload.className = 'hidden';
     fileupload.querySelector('input').onchange = function () {
